@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Complex | Dropdown Menu</title>
+    <style>
+
+        nav {
+            width: 110px;
+            height: 130px;
+        }
+        nav label {
+            cursor: pointer;
+            user-select: none;
+            width: 110px;
+            height: 20px;
+            padding: 5px;
+            background-color: #EEE;
+            color: grey;
+            border-radius: 5px;
+            display: block;
+            box-shadow: 0 3px #BBB;
+        }
+        nav label::after {
+            content: "▼";
+        }
+        nav ul {
+            display: none;
+            list-style: none;
+            padding-left: 6px;
+            margin-top: 3px;
+            
+        }
+        nav input {
+            display: none;
+        }
+        nav input:checked+label+ul {
+            display: block;
+        }
+        nav input:checked+label::after {
+            content:"▲";
+        }
+        
+        li:nth-child(1) {
+            padding: 5px;
+            background-color: #ddd;
+            border-bottom: 2px solid #BBB;
+            
+        }
+        li:nth-child(2) {
+            padding: 5px;
+            background-color: #eee;
+            border-bottom: 2px solid #ccc;
+        }
+        li:nth-child(3) {
+            padding: 5px;
+            background-color: #ddd;
+            box-shadow: 0 2px #AAA;
+        }
+        a {
+            text-decoration: none;
+            color: darkgrey;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="toggler"/>
+        <label for="toggler">
+            Dropdown
+        </label>
+        <ul>
+            <li><a href="#">item 1</a></li>
+            <li><a href="#">item 2</a></li>
+            <li><a href="#">item 3</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
